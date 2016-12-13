@@ -38,3 +38,4 @@
             render("login_form.php", ["title" => "Log In"]);
         }
     }
+?>
