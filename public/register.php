@@ -34,7 +34,7 @@
         
         if($status == 0)
         {
-            apologize("INSERT not successfull!");
+            apologize("Username already exists!");
         }
         $rows=CS50::query("SELECT LAST_INSERT_ID() AS id");
         $id=$rows[0]["id"];
