@@ -1,1 +1,1 @@
-<p>A share of <?=$stock["name"]?>(<?=$stock["symbol"]?>) costs <?=$stock["price"]?>.</p>
+<p>A share of <?=$name?> (<?=$symbol?>) costs <?=$price?>.</p>
