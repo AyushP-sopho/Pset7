@@ -4,15 +4,28 @@
 </div>
 -->
 
-<table class:"table table-striped">
+<table  class ="table" border="1px" align="center">
     <thead>
         <tr>
             <th>Symbol</th>
             <th>Name</th>
             <th>Shares</th>
             <th>Price</th>
-            <th>Total</th>
         </tr>
     </thead>
+    <tbody>
+        <?php foreach($positions as $position): ?>
+          <tr>
+              <td><?php print($position["symbol"]) ?></td>  
+              <td><?=$position["name"] ?></td>  
+              <td><?=$position["shares"] ?></td>
+              <td><?=$position["price"] ?></td>  
+          </tr>
+        <?php endforeach ?>  
+        <tr>
+            <td colspan="3" align="left">CASH</td>
+            <td><?php  print($cash[0]["cash"]); ?></td>
+        </tr>
+    </tbody>
     
 </table>

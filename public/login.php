@@ -37,6 +37,7 @@
             {
                 // remember that user's now logged in by storing user's ID in session
                 $_SESSION["id"] = $row["id"];
+                $_SESSION["username"]=$_POST["username"];
 
                 // redirect to portfolio
                 redirect("/");

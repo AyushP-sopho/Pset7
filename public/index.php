@@ -3,9 +3,9 @@
     // configuration
     require("../includes/config.php"); 
 
-    $id=CS50::query("SELECT id FROM users WHERE username=?",$_POST["username"]);
-    $rows=CS50::query("SELECT * FROM shares WHERE user_id=?",$id);
-    
+    $rows=CS50::query("SELECT * FROM shares WHERE user_id = ? ", $_SESSION["id"]);
+    $cash=CS50::query("SELECT cash FROM users where id = ?", $_SESSION["id"]);
+   
     $positions=[];
     foreach($rows as $row)
     {
@@ -20,6 +20,6 @@
             ];
         }
     }
-    render("portfolio.php",["title" => "Portfolio","positions" => $positions]);
+    render("portfolio.php",["title" => "Portfolio","positions" => $positions,"cash" => $cash]);
     
 ?>
