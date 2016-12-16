@@ -1,9 +1,9 @@
 <form action = "sell.php" method = "post">
     <fieldset>
         <div class = "form-group">
-            <input list="symbols" name="symbol" placeholder="Symbol">
+            <input list="symbols" autocomplete="off" name="symbol" placeholder="Symbol">
             <datalist id="symbols">
-                <?php foreach($stocks as $stock):?>
+                <?php foreach($rows as $stock):?>
                  <option value="<?=$stock["symbol"]?>" >
                 <?php endforeach ?>
             </datalist>    
