@@ -14,13 +14,12 @@
               <td align="left"><?= $position["symbol"] ?></td>  
               <td align="left"><?= $position["name"] ?></td>
               <td align="left"><?= $position["shares"] ?></td>
-              <td align="left"><?= $position["price"] ?></td>  
+              <td align="left">$ <?= number_format($position["price"],2) ?></td>  
           </tr>
         <?php endforeach ?>  
         <tr>
             <td colspan="3" align="left">CASH</td>
-            <td align="left"><?= $cash[0]["cash"] ?></td>
+            <td align="left">$ <?= number_format($cash[0]["cash"],2) ?></td>
         </tr>
     </tbody>
 </table>
-<h1> ROUND OFF TO 2 DECIMAL PLACES!!</h1>

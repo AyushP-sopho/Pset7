@@ -15,18 +15,18 @@
     //if arrived via a link show form
     if($_SERVER["REQUEST_METHOD"]=="GET")
     {
-        render("sell_form.php",["title" => "Sell Quote","rows" => $rows]);
+        render("sell_form.php",["title" => "Sell Asset","rows" => $rows]);
     }
     //if form has been submitted via form
     else if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         if(empty($_POST["symbol"]))
         {
-            apologize("Please enter the symbol of stock to sell.");
+            apologize("You did not enter the symbol of stock to sell.");
         }
         if(empty($_POST["shares"]))
         {
-            apologize("Please enter the number of shares to sell.");
+            apologize("You did not enter the number of shares to sell.");
         }
         
         //Check if shares to sell are not more than shares_held
@@ -43,7 +43,7 @@
         }
         
         $flag=0;
-        if($shares_held[0]["shares"]=$_POST["shares"])
+        if($shares_held[0]["shares"]==$_POST["shares"])
         {
             $flag=1;
         }

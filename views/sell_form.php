@@ -9,12 +9,12 @@
             </datalist>    
         </div>
         <div class = "form-group">
-            <input autocomplete = "off" name = "shares" placeholder = "Shares" type = "number"/>
+            <input autocomplete = "off" name = "shares" placeholder = "Shares" type = "number" min = "1" step = "1"/>
         </div>
-        <div class = "form-group"
+        <div class = "form-group">
             <button class = "btn btn-default" type = "submit">
                 <span class = "glyphicon glyphicon-usd"></span>
-                Sell 
+                 Sell
             </button>
         </div>
     </fieldset>
