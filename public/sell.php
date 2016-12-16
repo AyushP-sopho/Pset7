@@ -52,7 +52,7 @@
         $stock=lookup($_POST["symbol"]);
         $sale=$stock["price"]*$_POST["shares"];
         
-        //Decrease shares and increase cash
+        //Decrease shares or remove entry
         if($flag==0)
         {
             $status=CS50::query("UPDATE shares SET shares = shares - ? WHERE user_id = ? AND symbol = ?", $_POST["shares"], $_SESSION["id"], $_POST["symbol"]);
