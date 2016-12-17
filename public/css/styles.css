@@ -37,6 +37,12 @@
     width: auto;
 }
 
+#middle td
+{
+    /* left align text in cell */
+    text-align: left;
+}
+
 #bottom
 {
     /* shrink bottom's font size */

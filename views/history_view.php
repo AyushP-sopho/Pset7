@@ -1,4 +1,5 @@
-<table class = "table table-striped" align = "center">
+
+<table class = "table table-striped">
     <thead>
         <tr>
             <th>Transaction</th>
@@ -11,11 +12,12 @@
     <tbody>
         <?php foreach($rows as $row): ?>
           <tr>
-              <td align="left"><?= $row["transaction"] ?></td>
-              <td align="left"><?= $row["symbol"] ?></td>  
-              <td align="left"><?= $row["time"] ?></td>
-              <td align="left"><?= $row["shares"] ?></td>
-              <td align="left">$ <?= number_format($row["price"],2) ?></td>  
+              <td><?= $row["transaction"] ?></td>
+              <td><?= $row["symbol"] ?></td>  
+              <td><?= $row["time"] ?></td>
+              <td><?= $row["shares"] ?></td>
+              <td>$ <?= number_format($row["price"],2) ?></td>  
           </tr>
         <?php endforeach ?>
     </tbody>
+</table>
