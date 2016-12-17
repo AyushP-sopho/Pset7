@@ -44,6 +44,10 @@
         }
         else
         {
+            //Update logs
+            $log=CS50::query("INSERT INTO history (user_id, symbol, shares,transaction,price) VALUES(?,?,?,'Buy',?)", $_SESSION["id"], $stock["symbol"], $_POST["shares"], $stock["price"]);
+            
+            //Redirect to index 
             redirect("/");
         }
     }

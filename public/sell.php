@@ -42,6 +42,7 @@
             apologize("You don't own enough shares yet.");
         }
         
+        //if entry has to be removed or not
         $flag=0;
         if($shares_held[0]["shares"]==$_POST["shares"])
         {
@@ -62,14 +63,19 @@
             $status=CS50::query("DELETE FROM shares WHERE user_id = ? AND symbol = ?", $_SESSION["id"], $_POST["symbol"]);
         }
         
+        //Increase cash
         $var=CS50::query("UPDATE users SET cash = cash + ? WHERE id = ?", $sale, $_SESSION["id"]);
+        
         if($status==false || $var==false)
         {
             apologize("We cannot sell your shares at this time.");
         }
         else
         {
-            //Redirect to portfolio
+            //Update logs
+            $log=CS50::query("INSERT INTO history (user_id, symbol, shares,transaction,price) VALUES(?,?,?,'Sell',?)", $_SESSION["id"], $stock["symbol"], $_POST["shares"], $stock["price"]);
+            
+            //Redirect to index
             redirect("/");
         }
     }
